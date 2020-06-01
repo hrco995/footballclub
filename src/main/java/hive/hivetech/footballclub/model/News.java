@@ -19,7 +19,6 @@ public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date createdAt = new Date();
     private String title;
     private String content;
 }

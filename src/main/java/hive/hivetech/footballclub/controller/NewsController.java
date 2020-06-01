@@ -13,27 +13,27 @@ public class NewsController {
     @Autowired
     private INewsService newsService;
 
-    @RequestMapping(value = "/news", method = RequestMethod.GET)
+    @GetMapping("/news")
     public List<News> getAllNews(){
         return newsService.getAllNews();
     }
 
-    @RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
+    @GetMapping("/news/{id}")
     public News getNewsByID(@PathVariable Long id){
         return newsService.getNewsByID(id);
     }
 
-    @RequestMapping(value = "/news/save", method = RequestMethod.POST)
+    @PostMapping("/news/save")
     public void saveNews(@RequestBody News news){
         newsService.saveNews(news);
     }
 
-    @RequestMapping(value = "/news/update", method = RequestMethod.PUT)
+    @PutMapping("/news/update")
     public void updateNews(@RequestBody News news){
         newsService.updateNews(news);
     }
 
-    @RequestMapping(value = "/news/delete", method = RequestMethod.DELETE)
+    @DeleteMapping("/news/delete")
     public void deleteNews(Long idToDelete){
         newsService.deleteNews(idToDelete);
     }
